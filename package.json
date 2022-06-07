@@ -1,0 +1,24 @@
+{
+  "name": "gpu-server-doc",
+  "version": "1.0.0",
+  "description": "document of gpu server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "keywords": [
+    "doc",
+    "gpu",
+    "server"
+  ],
+  "author": "silentlight",
+  "license": "ISC",
+  "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^1.9.7",
+    "@vuepress/plugin-back-to-top": "^1.9.7",
+    "@vuepress/plugin-nprogress": "^1.9.7",
+    "vuepress": "^1.9.7"
+  }
+}
