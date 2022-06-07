@@ -1,6 +1,7 @@
 module.exports = {
   title: 'GPU-SERVER',
   description: 'Lab GPU server configuration, management, usage documentation.',
+  dest: './public',
   themeConfig: {
     nav: [
       { text: '指南', link: '/guide/' },
