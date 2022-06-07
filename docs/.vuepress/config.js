@@ -6,7 +6,7 @@ module.exports = {
       { text: '指南', link: '/guide/' },
       { text: '配置', link: '/configure/' },
       { text: '管理', link: '/admin/' },
-      { text: 'Github', link: 'https://github.com' },
+      { text: 'Github', link: 'https://github.com/cloudnzk/GPU-SERVER' },
     ],
     search: false,
     sidebar: 'auto',
