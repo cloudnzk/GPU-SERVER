@@ -13,8 +13,7 @@ lang: zh-CN
 3. 仅限校内登录校园网使用！
 
 4. 如果需要更多的资源，请先与老师沟通！
-4. 不要卸载重装容器内的显卡驱动，否则可能用不了GPU！
-4. 不要进行修改系统内核等危险行为！
+4. 不要卸载重装容器内的显卡驱动，不要升级系统内核！
 4. 在使用的过程中遇到问题，可随时联系管理员
 
 :::
@@ -51,7 +50,7 @@ lang: zh-CN
 
    终端输出以下信息说明已登录成功
 
-   ![](https://raw.githubusercontent.com/cloudnzk/image/main/img/terminal-ssh.png)
+   ![](./img/terminal-ssh.png)
 
 3. 修改密码
 
@@ -66,7 +65,7 @@ lang: zh-CN
 
    容器内已经默认安装好了显卡驱动，键入命令 ```nvidia-smi``` 后，可以看到 ```test``` 容器已经分配好了一张卡
 
-   ![](https://raw.githubusercontent.com/cloudnzk/image/main/img/nvidia-info.png)
+   ![](./img/nvidia-info.png)
 
 ### VS Code
 
@@ -74,31 +73,31 @@ lang: zh-CN
 
 1. 安装 ```Remote-SSH``` 插件
 
-   ![](https://raw.githubusercontent.com/cloudnzk/image/main/img/remote-ssh-install.png)
+   ![](./img/remote-ssh-install.png)
 
 2. 编辑连接配置文件
 
-   ![](https://raw.githubusercontent.com/cloudnzk/image/main/img/remote-ssh-configure1.png)
+   ![](./img/remote-ssh-configure1.png)
 
 3. 输入固定IP、用户名、端口号，点击连接
 
-   ![](https://raw.githubusercontent.com/cloudnzk/image/main/img/remote-ssh-configure2.png)
+   ![](./img/remote-ssh-configure2.png)
 
 4. 输入密码
 
    提醒一下这个输入密码的地方在 ```vscode``` 的正上方，眼神不好的可能还得找一会
 
-   ![](https://raw.githubusercontent.com/cloudnzk/image/main/img/input-password.png)
+   ![](./img/input-password.png)
 
 5. 新建一个终端，Enjoy！
 
-   ![](https://raw.githubusercontent.com/cloudnzk/image/main/img/vscode-terminal.png)
+   ![](./img/vscode-terminal.png)
 
 ### Termius
 
 [Termius](https://termius.com/teams)，一款颜值高、操作方便且功能强大的 ```ssh``` 客户端，有个人免费版。感兴趣的同学可以下载尝试一下
 
-![](https://raw.githubusercontent.com/cloudnzk/image/main/img/termius.png)
+![](./img/termius.png)
 
 
 
@@ -180,7 +179,7 @@ wget -c https://data.statmt.org/wmt18/translation-task/preprocessed/zh-en/corpus
 
    以上命令代表将当前目录下的 ```WikiMatrix.v1.en-zh.langid.tsv.gz``` 上传到容器的用户根目录下。测试了一下上传一个300多M的文件，差不多能跑满辣鸡校园网的上传带宽，速度害行
 
-   ![](https://raw.githubusercontent.com/cloudnzk/image/main/img/ssh-upload.png)
+   ![](./img/ssh-upload.png)
 
    上传整个目录需要添加一个 ```-r``` 参数：
 
