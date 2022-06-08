@@ -144,9 +144,9 @@ lang: zh-CN
 conda install cudatoolkit=11.3 cudnn=8.2.1
 ```
 
-- 查看 ```cuda``` 版本与显卡驱动的对应关系：[https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html]()
+- 查看 ```cuda``` 版本与显卡驱动的对应关系：[https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
 
-- 查看 ```cuda``` 版本与 ```cudnn``` 的对应关系：[https://developer.nvidia.com/rdp/cudnn-archive]() 
+- 查看 ```cuda``` 版本与 ```cudnn``` 的对应关系：[https://developer.nvidia.com/rdp/cudnn-archive](https://developer.nvidia.com/rdp/cudnn-archive) 
 
 ### Pytorch
 
