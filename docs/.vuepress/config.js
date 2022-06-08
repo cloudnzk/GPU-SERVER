@@ -5,7 +5,7 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: '指南', link: '/guide/' },
-      { text: '搭建', link: '/build/' },
+      { text: '问答', link: '/question/' },
     ],
     sidebar: 'auto',
     search: false,
