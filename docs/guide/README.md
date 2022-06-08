@@ -79,7 +79,7 @@ lang: zh-CN
 
    ![](./img/remote-ssh-configure1.png)
 
-3. 输入固定IP、用户名、端口号，点击连接
+3. 填入固定IP、用户名、端口号，点击连接
 
    ![](./img/remote-ssh-configure2.png)
 
@@ -118,6 +118,7 @@ lang: zh-CN
 
    ```shell
    bash Anaconda3-2022.05-Linux-x86_64.sh
+   # 使 conda 的环境变量立即生效
    source .bashrc
    ```
 
@@ -248,3 +249,32 @@ A：1、保证你的电脑在训练期间不休眠，还有保持稳定的网络
 
 ### SSH免密登录
 
+1. 在客户机生成公钥私钥
+
+   ```shell
+   ssh-keygen -t rsa
+   ```
+
+2. 上传客户端的公钥到服务器
+
+   ```shell
+   ssh-copy-id -p <port number> -i ~/.ssh/id_rsa.pub ubuntu@10.50.128.65
+   ```
+
+这样就不用每次连接都要输入密码了，美滋滋。要是你连 ```ssh``` 的命令都懒得输的话，转向用 ```SSH``` 客户端吧
+
+### 远程桌面
+
+如果不习惯命令行操作，可以尝试在自己的容器内安装远程桌面。操作可能会很卡，不推荐！
+
+## 参考
+
+[1] [实验室GPU服务器的LXD虚拟化](https://github.com/shenuiuin/LXD_GPU_SERVER)
+
+[2] [基于LXD搭建多人共用GPU服务器](https://blog.csdn.net/u012558210/article/details/120243466)
+
+[3] [Conda使用教程](https://zhuanlan.zhihu.com/p/483716942)
+
+[4] [Linux scp命令详解](https://wangchujiang.com/linux-command/c/scp.html)
+
+[5] [SSH 三步解决免密登录](https://blog.csdn.net/jeikerxiao/article/details/84105529)
