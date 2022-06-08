@@ -22,7 +22,7 @@ lang: zh-CN
 
 | 参数名   | 参数值          |
 | -------- | :-------------- |
-| 系统     | ubuntu 20.04LTS |
+| 系统     | Ubuntu 20.04LTS |
 | 显卡驱动 | 470.129.06      |
 | GPU      | 1张             |
 | CPU      | 20%             |
@@ -135,15 +135,18 @@ lang: zh-CN
 
 ### Cuda & Cudnn
 
-::: 注意
+::: tip 注意
 安装前请查询 cuda 版本是否支持当前显卡驱动（470.129.06），cudnn 的版本也需要与 cuda 对应。可以安装我推荐的版本，直接执行下面那条安装命令即可
-:::
 
-使用 ```conda``` 一条命令即可，可以替换下面的版本号安装你需要的版本：
+:::
 
 ```shell
 conda install cudatoolkit=11.3 cudnn=8.2.1
 ```
+
+- 查看 ```cuda``` 版本与显卡驱动的对应关系：[https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html]()
+
+- 查看 ```cuda``` 版本与 ```cudnn``` 的对应关系：[https://developer.nvidia.com/rdp/cudnn-archive]() 
 
 ### Pytorch
 
@@ -167,9 +170,9 @@ wget -c https://data.statmt.org/wmt18/translation-task/preprocessed/zh-en/corpus
 
 ### 个人数据集
 
-有时候我们会在本地对数据集先做一些预先处理，处理完成再上传到服务器训练。其实熟的话你直接在服务器的命令行上做也不是不行...
+有时候我们会在本地对数据集先做一些预先处理，处理完成再上传到服务器训练。
 
-1. ```ssh ```上传文件到容器的特定目录下（**推荐**）
+1. ```scp ``` 命令上传文件到容器的特定目录下（**推荐**）
 
    ::: tip 建议
    文件数量多的，压缩后再上传整个压缩包
@@ -203,7 +206,7 @@ wget -c https://data.statmt.org/wmt18/translation-task/preprocessed/zh-en/corpus
 
 2. 上传到 Gitee 仓库再 ```git clone``` 下来
 
-   但 Gitee 最大只支持上传 100M 的单文件，只使用于小型数据集
+   但 Gitee 最大只支持上传 ```100M``` 的单文件，只使用于小型数据集
 
 3. 阿里云盘的命令行客户端
 
