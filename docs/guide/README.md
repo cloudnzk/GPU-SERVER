@@ -117,7 +117,8 @@ lang: zh-CN
 2. 安装
 
    ```shell
-   sudo bash Anaconda3-2022.05-Linux-x86_64.sh
+   bash Anaconda3-2022.05-Linux-x86_64.sh
+   source .bashrc
    ```
 
 3. 创建虚拟环境并进入
@@ -136,7 +137,10 @@ lang: zh-CN
 ### Cuda & Cudnn
 
 ::: tip 注意
-安装前请查询 cuda 版本是否支持当前显卡驱动（470.129.06），cudnn 的版本也需要与 cuda 对应。可以安装我推荐的版本，直接执行下面那条安装命令即可
+
+建议用 conda 安装 Pytorch 或者 TensorFlow，会自动安装对应版本的 cuda 和 cudnn； 
+
+如果需要自行安装，安装前请查询 cuda 版本是否支持当前显卡驱动（470.129.06），cudnn 的版本也需要与 cuda 对应。可以安装我推荐的版本，直接执行下面那条安装命令即可。
 
 :::
 
