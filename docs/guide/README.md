@@ -105,10 +105,6 @@ lang: zh-CN
 
 由于每个人需要用到的训练环境不同，这里只介绍一些通用的环境安装
 
-::: tip 注意
-容器内默认只安装了显卡驱动，但 cuda 和 cudnn 都是没有安装的。推荐使用 conda 安装 pytorch，安装过程会自动安装与配置 cuda 和 cudnn，一步到位，免去了安装以上两者的繁琐过程。如果想要自行安装 cuda，需要注意不能超过显卡驱动（470.129.06）所支持的范围。
-:::
-
 ### Anaconda
 
 1. 下载 Anaconda
@@ -136,6 +132,18 @@ lang: zh-CN
    ```
    conda deactivate 
    ```
+
+### Cuda & Cudnn
+
+::: 注意
+安装前请查询 cuda 版本是否支持当前显卡驱动（470.129.06），cudnn 的版本也需要与 cuda 对应。可以安装我推荐的版本，直接执行下面那条安装命令即可
+:::
+
+使用 ```conda``` 一条命令即可，可以替换下面的版本号安装你需要的版本：
+
+```shell
+conda install cudatoolkit=11.3 cudnn=8.2.1
+```
 
 ### Pytorch
 
@@ -168,7 +176,7 @@ wget -c https://data.statmt.org/wmt18/translation-task/preprocessed/zh-en/corpus
    :::
 
    ```shell
-   scp -P <port number> <本地文件路径> ubuntu@10.50.128.65:/home/ubuntu/
+   scp -P <port number> <本地文件路径> ubuntu@10.50.128.65:<远程主机的指定目录>
    ```
 
    例如：
@@ -177,14 +185,14 @@ wget -c https://data.statmt.org/wmt18/translation-task/preprocessed/zh-en/corpus
    scp -P 60601 WikiMatrix.v1.en-zh.langid.tsv.gz ubuntu@10.50.128.65:/home/ubuntu/
    ```
 
-   以上命令代表将当前目录下的 ```WikiMatrix.v1.en-zh.langid.tsv.gz``` 上传到容器的用户根目录下。测试了一下上传一个300多M的文件，差不多能跑满辣鸡校园网的上传带宽，速度害行
+   以上命令代表将当前目录下的 ```WikiMatrix.v1.en-zh.langid.tsv.gz``` 上传到容器的用户根目录下。测试了一下上传一个300多MB的文件，差不多能跑满辣鸡校园网的上传带宽，速度害行
 
    ![](./img/ssh-upload.png)
 
    上传整个目录需要添加一个 ```-r``` 参数：
 
    ```shell
-   scp -P <port number> -r <本地文件夹路径> ubuntu@10.50.128.65:/home/ubuntu/
+   scp -P <port number> -r <本地文件夹路径> ubuntu@10.50.128.65:<远程主机的指定目录>
    ```
 
    例如：
@@ -209,15 +217,21 @@ wget -c https://data.statmt.org/wmt18/translation-task/preprocessed/zh-en/corpus
 
 A: 由于容器非常纯净，没有安装多余的软件，因此只需要根据错误提示，到谷歌搜索，安装需要的依赖即可
 
+
+
 **Q2: 为什么```pip```,```conda```,```git clone```的时候那么慢**
 
-A：国内网络的原因，可设置镜像加快下载速度。推荐使用清华源，GitHub 仓库可先一键克隆到 Gitee，再 clone 下来
+A：国内网络的原因，可设置镜像加快下载速度。推荐使用清华源，GitHub 仓库可先一键克隆到 Gitee，再 ```clone``` 下来
+
+
 
 **Q3: 为什么没有图形界面，非得用命令行？**
 
 A： 因为实验室网速很拉，只有100M，我们校园网就更拉了，50M都不到。所以开图形界面会占用不少的网络带宽，很卡！多习惯下命令行吧，顺便练习下 ```Linux``` 命令（滑稽
 
-**Q4: 为什么我的 ssh 会断连**
+
+
+**Q4: 为什么我的 ```ssh``` 会断连**
 
 A：1、保证你的电脑在训练期间不休眠，还有保持稳定的网络。2、闲置一段时间后会自动断开连接，可修改服务器端和客户端的 ```ssh``` 参数。但还是建议在训练期间就保存 ```checkpoints``` 以防不测
 
